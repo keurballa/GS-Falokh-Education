@@ -1,0 +1,71 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Default deny
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // --- Global Helpers ---
+    function isSignedIn() { return request.auth != null; }
+    function isVerified() { return isSignedIn() && request.auth.token.email_verified == true; }
+    function isAdmin() { return isVerified() && request.auth.token.email == 'archilo05@gmail.com'; }
+    function isValidId(id) { return id is string && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$'); }
+    function incoming() { return request.resource.data; }
+    function existing() { return resource.data; }
+
+    // --- Validation Helpers ---
+
+    function isValidRegistration(data) {
+      return data.studentName is string && data.studentName.size() <= 100 &&
+             data.level in ['Preschool', 'Elementary', 'Middle', 'HighSchool'] &&
+             data.parentName is string && data.parentName.size() <= 100 &&
+             data.parentEmail is string && data.parentEmail.size() <= 100 &&
+             data.parentPhone is string && data.parentPhone.size() <= 20 &&
+             data.createdAt is timestamp;
+    }
+
+    function isValidArticle(data) {
+      return data.title is string && data.title.size() <= 200 &&
+             data.slug is string && data.slug.size() <= 200 &&
+             data.content is string &&
+             data.publishedAt is timestamp;
+    }
+
+    function isValidTestimonial(data) {
+      return data.name is string && data.name.size() <= 100 &&
+             data.role is string && data.role.size() <= 100 &&
+             data.content is string && data.content.size() <= 500;
+    }
+
+    function isValidMessage(data) {
+      return data.name is string && data.name.size() <= 100 &&
+             data.email is string && data.email.size() <= 100 &&
+             data.text is string && data.text.size() <= 1000 &&
+             data.createdAt is timestamp;
+    }
+
+    // --- Collection Rules ---
+
+    match /registrations/{registId} {
+      allow create: if isValidRegistration(incoming()) && (incoming().keys().hasAll(['studentName', 'level', 'parentName', 'parentEmail', 'parentPhone', 'createdAt']));
+      allow read, update, delete: if isAdmin();
+    }
+
+    match /articles/{articleId} {
+      allow read: if true;
+      allow write: if isAdmin() && isValidId(articleId) && (request.method == 'create' ? isValidArticle(incoming()) : isValidArticle(incoming()));
+    }
+
+    match /testimonials/{testId} {
+      allow read: if true;
+      allow write: if isAdmin() && isValidId(testId) && (request.method == 'create' ? isValidTestimonial(incoming()) : isValidTestimonial(incoming()));
+    }
+
+    match /messages/{msgId} {
+      allow create: if isValidMessage(incoming());
+      allow read, update, delete: if isAdmin();
+    }
+  }
+}

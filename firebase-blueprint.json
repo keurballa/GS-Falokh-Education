@@ -1,0 +1,85 @@
+{
+  "entities": {
+    "Registration": {
+      "title": "Registration",
+      "description": "Student registration for Groupe Scolaire Falokh Education",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "studentName": { "type": "string" },
+        "studentBirthDate": { "type": "string", "format": "date" },
+        "level": { "type": "string", "enum": ["Preschool", "Elementary", "Middle", "HighSchool"] },
+        "parentName": { "type": "string" },
+        "parentEmail": { "type": "string", "format": "email" },
+        "parentPhone": { "type": "string" },
+        "address": { "type": "string" },
+        "status": { "type": "string", "enum": ["pending", "reviewed", "accepted", "rejected"] },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "documents": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      },
+      "required": ["studentName", "level", "parentName", "parentEmail", "parentPhone", "createdAt"]
+    },
+    "NewsArticle": {
+      "title": "News Article",
+      "description": "Article for the school blog or news section",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "slug": { "type": "string" },
+        "content": { "type": "string" },
+        "image": { "type": "string" },
+        "category": { "type": "string" },
+        "author": { "type": "string" },
+        "publishedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["title", "slug", "content", "publishedAt"]
+    },
+    "Testimonial": {
+      "title": "Testimonial",
+      "description": "Parent or student testimonial",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "role": { "type": "string" },
+        "content": { "type": "string" },
+        "image": { "type": "string" },
+        "rating": { "type": "number" }
+      },
+      "required": ["name", "role", "content"]
+    },
+    "Message": {
+      "title": "Contact Message",
+      "description": "Message from the contact form",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "email": { "type": "string", "format": "email" },
+        "subject": { "type": "string" },
+        "text": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["name", "email", "text", "createdAt"]
+    }
+  },
+  "firestore": {
+    "/registrations/{id}": {
+      "schema": "Registration",
+      "description": "Collection of student registrations"
+    },
+    "/articles/{id}": {
+      "schema": "NewsArticle",
+      "description": "Collection of blog articles and news"
+    },
+    "/testimonials/{id}": {
+      "schema": "Testimonial",
+      "description": "Collection of school testimonials"
+    },
+    "/messages/{id}": {
+      "schema": "Message",
+      "description": "Collection of contact form messages"
+    }
+  }
+}

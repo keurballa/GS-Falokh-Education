@@ -1,0 +1,321 @@
+import { motion } from 'motion/react';
+import { 
+  ArrowRight, Users, Trophy, GraduationCap, 
+  CheckCircle2, Star, Calendar, MessageSquare,
+  Library, Bus, Coffee, Microscope, Laptop,
+  BookOpen
+} from 'lucide-react';
+import { Link } from 'react-router-dom';
+
+const fadeIn = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+};
+
+const staggerContainer = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1
+    }
+  }
+};
+
+export default function Home() {
+  return (
+    <div className="w-full">
+      {/* --- HERO SECTION --- */}
+      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+        {/* Background Overlay */}
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=2070&auto=format&fit=crop" 
+            alt="School background" 
+            className="w-full h-full object-cover scale-105"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-brand-dark/90 via-brand-dark/50 to-transparent"></div>
+        </div>
+
+        <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8 w-full">
+          <motion.div 
+            initial="hidden"
+            animate="visible"
+            variants={staggerContainer}
+            className="max-w-2xl text-white"
+          >
+            <motion.span 
+              variants={fadeIn}
+              className="bg-brand-blue/20 backdrop-blur-sm text-brand-blue border border-brand-blue/30 px-4 py-2 rounded-full text-sm font-bold inline-block mb-6 uppercase tracking-wider"
+            >
+              Excellence • Innovation • Falokh
+            </motion.span>
+            <motion.h1 
+              variants={fadeIn}
+              className="text-5xl md:text-7xl font-display font-bold leading-tight mb-6"
+            >
+              GS Falokh Education : <span className="text-brand-orange">L'Avenir</span>.
+            </motion.h1>
+            <motion.p 
+              variants={fadeIn}
+              className="text-lg md:text-xl text-gray-300 mb-10 leading-relaxed"
+            >
+              Bienvenue au Groupe Scolaire Falokh Education, où nous combinons pédagogie moderne et valeurs traditionnelles pour offrir une éducation de classe mondiale à votre enfant à Mbour.
+            </motion.p>
+            <motion.div 
+              variants={fadeIn}
+              className="flex flex-col sm:flex-row gap-4"
+            >
+              <Link to="/admissions" className="bg-brand-blue text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-opacity-90 transition-all flex items-center justify-center gap-2 group">
+                Inscrire mon enfant <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+              </Link>
+              <Link to="/presentation" className="bg-white/10 backdrop-blur-md text-white border border-white/20 px-8 py-4 rounded-full font-bold text-lg hover:bg-white/20 transition-all text-center">
+                Découvrir notre école
+              </Link>
+            </motion.div>
+          </motion.div>
+        </div>
+
+        {/* Floating Stats Card */}
+        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 w-full max-w-5xl px-4 hidden md:block">
+          <motion.div 
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.8 }}
+            className="bg-white rounded-2xl shadow-2xl p-8 grid grid-cols-4 divide-x divide-gray-100"
+          >
+            {[
+              { label: 'Taux de réussite', value: '100%', icon: Trophy },
+              { label: "Années d'expérience", value: '15+', icon: Calendar },
+              { label: 'Élèves inscrits', value: '850+', icon: Users },
+              { label: 'Enseignants experts', value: '45+', icon: GraduationCap },
+            ].map((stat, i) => (
+              <div key={i} className="px-6 text-center first:pl-0 last:pr-0">
+                <stat.icon size={24} className="text-brand-blue mx-auto mb-3" />
+                <div className="text-3xl font-display font-bold text-brand-dark mb-1">{stat.value}</div>
+                <div className="text-sm text-gray-500 font-medium">{stat.label}</div>
+              </div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* --- PRESENTATION SECTION --- */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 md:px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <motion.div 
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeIn}
+            className="relative"
+          >
+            <div className="grid grid-cols-2 gap-4">
+              <img 
+                src="https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=1932&auto=format&fit=crop" 
+                alt="Learning" 
+                className="w-full h-64 object-cover rounded-2xl shadow-lg mt-12"
+              />
+              <img 
+                src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=1920&auto=format&fit=crop" 
+                alt="Activities" 
+                className="w-full h-64 object-cover rounded-2xl shadow-lg"
+              />
+            </div>
+            <div className="absolute -bottom-6 -right-6 bg-brand-orange text-white p-6 rounded-2xl shadow-xl hidden sm:block">
+              <div className="text-4xl font-bold">15+</div>
+              <div className="text-sm font-medium">Ans d'excellence</div>
+            </div>
+          </motion.div>
+
+          <motion.div 
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={staggerContainer}
+          >
+            <motion.h2 variants={fadeIn} className="text-brand-blue font-bold text-sm uppercase tracking-widest mb-4">Notre Vision</motion.h2>
+            <motion.h3 variants={fadeIn} className="text-4xl font-display font-bold text-brand-dark mb-6 leading-tight">
+              L'excellence académique combinée à l'innovation pédagogique.
+            </motion.h3>
+            <motion.p variants={fadeIn} className="text-gray-600 mb-8 leading-relaxed">
+              Situé à Falokh, Mbour, notre établissement a pour mission de révolutionner l'éducation locale. Le Groupe Scolaire Falokh Education est un lieu où chaque enfant est encouragé à découvrir ses talents uniques.
+            </motion.p>
+            <motion.div variants={fadeIn} className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10">
+              {[
+                "Pédagogie active et moderne",
+                "Suivi personnalisé de l'élève",
+                "Environnement sûr et bienveillant",
+                "Accompagnement vers la réussite"
+              ].map(item => (
+                <div key={item} className="flex items-center gap-3">
+                  <CheckCircle2 className="text-brand-orange" size={20} />
+                  <span className="text-sm font-semibold text-gray-700">{item}</span>
+                </div>
+              ))}
+            </motion.div>
+            <motion.button variants={fadeIn} className="group flex items-center gap-2 text-brand-blue font-bold hover:gap-4 transition-all">
+              Découvrir notre histoire <ArrowRight size={20} />
+            </motion.button>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* --- CYCLES SECTION --- */}
+      <section className="py-24 bg-brand-light">
+        <div className="max-w-7xl mx-auto px-4 md:px-8 text-center mb-16">
+          <h2 className="text-brand-blue font-bold text-sm uppercase tracking-widest mb-4">Offre Éducative</h2>
+          <h3 className="text-4xl font-display font-bold text-brand-dark">Nos Cycles Scolaires</h3>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 md:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {[
+            { 
+              title: 'Préscolaire', 
+              desc: 'Éveil, créativité et premiers pas vers la socialisation.', 
+              icon: BookOpen, 
+              img: '/images/img 6.jpg' 
+            },
+            { 
+              title: 'Élémentaire', 
+              desc: 'Acquisition des bases solides en lecture, maths et sciences.', 
+              icon: GraduationCap, 
+              img: '/images/img 3.jpg' 
+            },
+            { 
+              title: 'Moyen', 
+              desc: "Développement de l'esprit critique et préparation au BFEM.", 
+              icon: Microscope, 
+              img: '/images/img 4.jpg' 
+            },
+            { 
+              title: 'Secondaire', 
+              desc: 'Spécialisation et excellence pour la réussite au Baccalauréat.', 
+              icon: Users, 
+              img: '/images/img7.jpg' 
+            },
+          ].map((cycle, i) => (
+            <motion.div 
+              key={i}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1 }}
+              className="group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500"
+            >
+              <div className="h-48 overflow-hidden relative">
+                <img src={cycle.img} alt={cycle.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                <div className="absolute top-4 left-4 bg-white/90 p-3 rounded-2xl shadow-md">
+                  <cycle.icon size={24} className="text-brand-blue" />
+                </div>
+              </div>
+              <div className="p-8">
+                <h4 className="text-xl font-display font-bold mb-3 text-brand-dark">{cycle.title}</h4>
+                <p className="text-gray-500 text-sm mb-6 leading-relaxed">
+                  {cycle.desc}
+                </p>
+                <Link to="/cycles" className="text-brand-blue font-bold text-sm flex items-center gap-2 group-hover:gap-3 transition-all">
+                  Voir le programme <ArrowRight size={16} />
+                </Link>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      {/* --- WHY CHOOSE US --- */}
+      <section className="py-24 bg-brand-dark text-white relative overflow-hidden">
+        {/* Background blobs */}
+        <div className="absolute top-0 right-0 w-96 h-96 bg-brand-blue/10 rounded-full blur-[120px] -mr-48 -mt-48"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-brand-orange/10 rounded-full blur-[120px] -ml-48 -mb-48"></div>
+
+        <div className="max-w-7xl mx-auto px-4 md:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-brand-orange font-bold text-sm uppercase tracking-widest mb-4">Pourquoi nous ?</h2>
+            <h3 className="text-4xl font-display font-bold">Un environnement d'apprentissage premium</h3>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              { title: 'Informatique & Labo', icon: Laptop, desc: 'Salles info modernes et laboratoires sciences équipés.' },
+              { title: 'Transport Scolaire', icon: Bus, desc: 'Un réseau de bus sécurisé couvrant tout Dakar.' },
+              { title: 'Bibliothèque Digitale', icon: Library, desc: 'Milliers de ressources accessibles 24h/24.' },
+              { title: 'Cantine Équilibrée', icon: Coffee, desc: 'Repas sains et variés préparés sur place.' },
+              { title: 'Suivi Personnalisé', icon: Users, desc: 'Rapport hebdomadaire pour chaque parent.' },
+              { title: 'Activités Clubs', icon: Trophy, desc: 'Musique, Sport, Théâtre et Club de Robotique.' },
+            ].map((item, i) => (
+              <motion.div 
+                key={i}
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.05 }}
+                className="p-8 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-sm hover:border-brand-blue/50 transition-all group"
+              >
+                <div className="w-14 h-14 bg-brand-blue/20 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-brand-blue transition-colors">
+                  <item.icon size={28} className="text-brand-blue group-hover:text-white" />
+                </div>
+                <h4 className="text-xl font-display font-bold mb-3">{item.title}</h4>
+                <p className="text-gray-400 text-sm leading-relaxed">{item.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* --- TESTIMONIALS --- */}
+      <section className="py-24 bg-white overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 md:px-8 flex flex-col items-center">
+           <h2 className="text-brand-blue font-bold text-sm uppercase tracking-widest mb-4">Témoignages</h2>
+           <h3 className="text-4xl font-display font-bold text-center mb-16">Ce que disent nos parents</h3>
+           
+           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full">
+              {[
+                { name: 'Mme Diop', role: 'Parente d\'élève', content: "Mes enfants s'épanouissent pleinement. Le suivi est exceptionnel et le niveau académique très élevé." },
+                { name: 'M. Sow', role: 'Parent d\'élève', content: "La modernité des infrastructures et l'approche pédagogique sont ce qui m'a convaincu. Je ne regrette absolument pas mon choix." },
+                { name: 'Awa Ndiaye', role: 'Ancienne élève', content: "GS Falokh Education m'a donné les bases pour réussir mes études supérieures." }
+              ].map((item, i) => (
+                <div key={i} className="bg-gray-50 p-8 rounded-3xl relative">
+                  <div className="flex gap-1 mb-4">
+                    {[1,2,3,4,5].map(star => <Star key={star} size={16} className="fill-brand-orange text-brand-orange" />)}
+                  </div>
+                  <p className="text-gray-600 mb-8 italic leading-relaxed">"{item.content}"</p>
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 bg-brand-blue/20 rounded-full"></div>
+                    <div>
+                      <h5 className="font-bold text-brand-dark">{item.name}</h5>
+                      <span className="text-xs text-gray-400 font-medium">{item.role}</span>
+                    </div>
+                  </div>
+                </div>
+              ))}
+           </div>
+        </div>
+      </section>
+
+      {/* --- CTA SECTION --- */}
+      <section className="py-24 px-4 md:px-8">
+        <div className="max-w-5xl mx-auto bg-brand-blue rounded-[3rem] p-12 md:p-20 text-center relative overflow-hidden shadow-2xl">
+          <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -mr-32 -mt-32"></div>
+          <motion.div 
+             initial={{ opacity: 0, y: 20 }}
+             whileInView={{ opacity: 1, y: 0 }}
+             viewport={{ once: true }}
+             className="relative z-10"
+          >
+            <h2 className="text-3xl md:text-5xl font-display font-bold text-white mb-8">Rejoignez GS Falokh Education dès aujourd'hui</h2>
+            <p className="text-white/80 text-lg mb-12 max-w-2xl mx-auto">Offrez à votre enfant les outils et l'environnement nécessaires pour exceller dans un monde en constante évolution.</p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <Link to="/admissions" className="bg-white text-brand-blue px-10 py-5 rounded-full font-bold text-lg hover:shadow-xl transition-all">
+                S'inscrire maintenant
+              </Link>
+              <Link to="/contact" className="bg-brand-orange text-white px-10 py-5 rounded-full font-bold text-lg hover:shadow-xl transition-all">
+                Nous contacter
+              </Link>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+    </div>
+  );
+}

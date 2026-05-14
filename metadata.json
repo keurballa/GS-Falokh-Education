@@ -1,0 +1,8 @@
+{
+  "name": "groupe scolaire fallokh education",
+  "description": "Portail web premium pour le Groupe Scolaire Falokh Education : Éducation moderne, Innovation pédagogique et Réussite scolaire à Mbour, Sénégal.",
+  "requestFramePermissions": [
+    "geolocation"
+  ],
+  "majorCapabilities": []
+}
