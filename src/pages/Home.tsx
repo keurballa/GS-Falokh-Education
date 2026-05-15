@@ -3,7 +3,7 @@ import {
   ArrowRight, Users, Trophy, GraduationCap, 
   CheckCircle2, Star, Calendar, MessageSquare,
   Library, Bus, Coffee, Microscope, Laptop,
-  BookOpen
+  BookOpen, Handshake
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -86,7 +86,7 @@ export default function Home() {
           >
             {[
               { label: 'Taux de réussite', value: '100%', icon: Trophy },
-              { label: "Années d'expérience", value: '15+', icon: Calendar },
+              { label: "Années d'expérience", value: '10+', icon: Calendar },
               { label: 'Élèves inscrits', value: '850+', icon: Users },
               { label: 'Enseignants experts', value: '45+', icon: GraduationCap },
             ].map((stat, i) => (
@@ -123,7 +123,7 @@ export default function Home() {
               />
             </div>
             <div className="absolute -bottom-6 -right-6 bg-brand-orange text-white p-6 rounded-2xl shadow-xl hidden sm:block">
-              <div className="text-4xl font-bold">15+</div>
+              <div className="text-4xl font-bold">10+</div>
               <div className="text-sm font-medium">Ans d'excellence</div>
             </div>
           </motion.div>
@@ -174,25 +174,25 @@ export default function Home() {
               title: 'Préscolaire', 
               desc: 'Éveil, créativité et premiers pas vers la socialisation.', 
               icon: BookOpen, 
-              img: '/images/img 6.jpg' 
+              img: '/images/img 10.jpeg' 
             },
             { 
               title: 'Élémentaire', 
               desc: 'Acquisition des bases solides en lecture, maths et sciences.', 
               icon: GraduationCap, 
-              img: '/images/img 3.jpg' 
+              img: '/images/img 9.jpeg' 
             },
             { 
               title: 'Moyen', 
               desc: "Développement de l'esprit critique et préparation au BFEM.", 
               icon: Microscope, 
-              img: '/images/img 4.jpg' 
+              img: '/images/img 10.jpeg' 
             },
             { 
               title: 'Secondaire', 
               desc: 'Spécialisation et excellence pour la réussite au Baccalauréat.', 
               icon: Users, 
-              img: '/images/img7.jpg' 
+              img: '/images/img 8.jpeg' 
             },
           ].map((cycle, i) => (
             <motion.div 
@@ -238,26 +238,47 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               { title: 'Informatique & Labo', icon: Laptop, desc: 'Salles info modernes et laboratoires sciences équipés.' },
-              { title: 'Transport Scolaire', icon: Bus, desc: 'Un réseau de bus sécurisé couvrant tout Dakar.' },
+              { title: 'Partenaires', icon: Handshake, desc: 'Collaboration avec des institutions nationales et internationales.' },
               { title: 'Bibliothèque Digitale', icon: Library, desc: 'Milliers de ressources accessibles 24h/24.' },
               { title: 'Cantine Équilibrée', icon: Coffee, desc: 'Repas sains et variés préparés sur place.' },
               { title: 'Suivi Personnalisé', icon: Users, desc: 'Rapport hebdomadaire pour chaque parent.' },
               { title: 'Activités Clubs', icon: Trophy, desc: 'Musique, Sport, Théâtre et Club de Robotique.' },
             ].map((item, i) => (
-              <motion.div 
-                key={i}
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.05 }}
-                className="p-8 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-sm hover:border-brand-blue/50 transition-all group"
-              >
-                <div className="w-14 h-14 bg-brand-blue/20 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-brand-blue transition-colors">
-                  <item.icon size={28} className="text-brand-blue group-hover:text-white" />
-                </div>
-                <h4 className="text-xl font-display font-bold mb-3">{item.title}</h4>
-                <p className="text-gray-400 text-sm leading-relaxed">{item.desc}</p>
-              </motion.div>
+              item.title === 'Bibliothèque Digitale' ? (
+                <Link to="/library" key={i}>
+                  <motion.div 
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.05 }}
+                    className="p-8 h-full rounded-3xl bg-white/5 border border-white/10 backdrop-blur-sm hover:border-brand-blue/50 transition-all group cursor-pointer"
+                  >
+                    <div className="w-14 h-14 bg-brand-blue/20 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-brand-blue transition-colors">
+                      <item.icon size={28} className="text-brand-blue group-hover:text-white" />
+                    </div>
+                    <h4 className="text-xl font-display font-bold mb-3">{item.title}</h4>
+                    <p className="text-gray-400 text-sm leading-relaxed mb-4">{item.desc}</p>
+                    <span className="text-brand-blue font-bold text-xs flex items-center gap-1 group-hover:gap-2 transition-all">
+                      Accéder à la bibliothèque <ArrowRight size={14} />
+                    </span>
+                  </motion.div>
+                </Link>
+              ) : (
+                <motion.div 
+                  key={i}
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.05 }}
+                  className="p-8 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-sm hover:border-brand-blue/50 transition-all group"
+                >
+                  <div className="w-14 h-14 bg-brand-blue/20 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-brand-blue transition-colors">
+                    <item.icon size={28} className="text-brand-blue group-hover:text-white" />
+                  </div>
+                  <h4 className="text-xl font-display font-bold mb-3">{item.title}</h4>
+                  <p className="text-gray-400 text-sm leading-relaxed">{item.desc}</p>
+                </motion.div>
+              )
             ))}
           </div>
         </div>

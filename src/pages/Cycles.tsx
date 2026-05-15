@@ -11,7 +11,7 @@ export default function Cycles() {
       subtitle: 'La Petite, Moyenne et Grande Section',
       icon: Baby,
       color: 'bg-pink-100 text-pink-600',
-      img: '/images/img 6.jpg',
+      img: '/images/img 10.jpeg',
       desc: 'Un accueil chaleureux dans un univers de jeux et de découvertes pour stimuler l\'éveil et l\'autonomie.',
       points: ['Ateliers créatifs', 'Langage & Communication', 'Psychomotricité', 'Éveil musical']
     },
@@ -20,16 +20,16 @@ export default function Cycles() {
       subtitle: 'Du CP au CM2',
       icon: BookOpen,
       color: 'bg-brand-blue/10 text-brand-blue',
-      img: '/images/img 3.jpg',
+      img: '/images/img 9.jpeg',
       desc: 'L\'acquisition des fondamentaux (lire, écrire, compter) à travers une pédagogie rigoureuse et bienveillante.',
-      points: ['Bilinguisme Français/Anglais', 'Sciences & Technologie', 'Sport & Culture', 'Renforcement personnalisé']
+      points: ['Bilinguisme Anglais/Français', 'Sciences & Technologie', 'Sport & Culture', 'Renforcement personnalisé']
     },
     {
       title: 'Moyen',
       subtitle: 'De la 6ème à la 3ème',
       icon: Microscope,
       color: 'bg-brand-orange/10 text-brand-orange',
-      img: '/images/img 4.jpg',
+      img: '/images/img 10.jpeg',
       desc: 'Développer l\'esprit d\'analyse et préparer sereinement les élèves au Brevet de Fin d\'Études Moyennes (BFEM).',
       points: ['Orientation scolaire', 'Clubs scientifiques', 'Informatique avancée', 'Développement personnel']
     },
@@ -38,7 +38,7 @@ export default function Cycles() {
       subtitle: 'De la Seconde à la Terminale',
       icon: GraduationCap,
       color: 'bg-purple-100 text-purple-600',
-      img: '/images/img7.jpg',
+      img: '/images/img 8.jpeg',
       desc: 'La voie vers l\'excellence académique et la préparation rigoureuse aux épreuves du Baccalauréat.',
       points: ['Prépa concours internationaux', 'Séries L, S1, S2, G', 'Accompagnement post-BAC', 'Leadership & Débat']
     }

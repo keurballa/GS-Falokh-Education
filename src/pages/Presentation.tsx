@@ -42,7 +42,7 @@ export default function Presentation() {
            <div className="inline-flex items-center gap-2 text-brand-blue font-bold text-sm uppercase mb-6">
              <History size={18} /> Notre Histoire
            </div>
-           <h2 className="text-4xl font-display font-bold text-brand-dark mb-8 leading-tight">Depuis 2011, nous bâtissons l'Excellence.</h2>
+           <h2 className="text-4xl font-display font-bold text-brand-dark mb-8 leading-tight">Depuis 2016, nous bâtissons l'Excellence.</h2>
            <p className="text-gray-600 mb-6 leading-relaxed">
              Groupe Scolaire Falokh Education a ouvert ses portes avec une vision claire : offrir une alternative éducative de haute qualité accessible aux familles de Mbour désirant une formation de standard international.
            </p>
