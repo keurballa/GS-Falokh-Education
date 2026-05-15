@@ -284,6 +284,74 @@ export default function Home() {
         </div>
       </section>
 
+      {/* --- NEWS SECTION --- */}
+      <section className="py-24 bg-brand-light">
+        <div className="max-w-7xl mx-auto px-4 md:px-8">
+          <div className="flex flex-col md:flex-row justify-between items-end gap-6 mb-16">
+            <div>
+              <h2 className="text-brand-blue font-bold text-sm uppercase tracking-widest mb-4">Actualités</h2>
+              <h3 className="text-4xl font-display font-bold text-brand-dark">Dernières Nouvelles</h3>
+            </div>
+            <Link to="/news" className="text-brand-blue font-bold flex items-center gap-2 hover:gap-3 transition-all">
+              Voir tous les articles <ArrowRight size={20} />
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                title: "Lancement du nouveau Club de Robotique",
+                desc: "Nous sommes fiers d'annoncer l'ouverture de notre club de robotique et d'IA dès la rentrée prochaine.",
+                img: "/images/img1.jpg",
+                date: "10 Mai 2026",
+                category: "Innovation"
+              },
+              {
+                title: "Sortie pédagogique au Parc de Hann",
+                desc: "Les classes d'élémentaire ont profité d'une journée riche en découvertes sur la biodiversité.",
+                img: "/images/img 2.jpg",
+                date: "05 Mai 2026",
+                category: "Événement"
+              },
+              {
+                title: "Célébration de la réussite : 100% au BAC 2025",
+                desc: "Pour la troisième année consécutive, GS Falokh Education affiche un taux de réussite exceptionnel.",
+                img: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=800",
+                date: "12 Mai 2026",
+                category: "Résultats"
+              }
+            ].map((news, i) => (
+              <motion.div 
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="bg-white rounded-[2.5rem] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group"
+              >
+                <div className="h-60 overflow-hidden relative">
+                  <img src={news.img} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt={news.title} />
+                  <span className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-brand-blue px-4 py-1.5 rounded-full text-[10px] font-bold shadow-md">
+                    {news.category}
+                  </span>
+                </div>
+                <div className="p-8">
+                  <div className="flex items-center gap-4 text-[10px] font-bold text-gray-400 mb-4 uppercase tracking-widest">
+                    <span className="flex items-center gap-1"><Calendar size={14} /> {news.date}</span>
+                  </div>
+                  <h4 className="text-xl font-display font-bold text-brand-dark mb-4 leading-snug group-hover:text-brand-blue transition-colors">
+                    {news.title}
+                  </h4>
+                  <Link to="/news" className="text-brand-blue font-bold text-xs flex items-center gap-2 group-hover:gap-4 transition-all">
+                    Lire l'article <ArrowRight size={16} />
+                  </Link>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* --- TESTIMONIALS --- */}
       <section className="py-24 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 md:px-8 flex flex-col items-center">

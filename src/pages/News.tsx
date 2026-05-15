@@ -16,7 +16,7 @@ const mockNews = [
     id: '2',
     title: "Lancement du nouveau Club de Robotique",
     desc: "Nous sommes fiers d'annoncer l'ouverture de notre club de robotique et d'IA dès la rentrée prochaine pour tous les niveaux.",
-    img: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=800",
+    img: "/images/img1.jpg",
     date: "10 Mai 2026",
     author: "M. Faye",
     category: "Innovation"
@@ -25,7 +25,7 @@ const mockNews = [
     id: '3',
     title: "Sortie pédagogique au Parc de Hann",
     desc: "Les classes d'élémentaire ont profité d'une journée riche en découvertes sur la biodiversité et la protection de l'environnement.",
-    img: "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=800",
+    img: "/images/img 2.jpg",
     date: "05 Mai 2026",
     author: "Mme Ndiaye",
     category: "Événement"
