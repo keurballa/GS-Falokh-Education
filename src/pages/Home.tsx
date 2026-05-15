@@ -1,9 +1,10 @@
-import { motion } from 'motion/react';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
 import { 
   ArrowRight, Users, Trophy, GraduationCap, 
   CheckCircle2, Star, Calendar, MessageSquare,
   Library, Bus, Coffee, Microscope, Laptop,
-  BookOpen, Handshake
+  BookOpen, Handshake, X
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -23,6 +24,8 @@ const staggerContainer = {
 };
 
 export default function Home() {
+  const [selectedPartner, setSelectedPartner] = useState<string | null>(null);
+
   return (
     <div className="w-full">
       {/* --- HERO SECTION --- */}
@@ -396,7 +399,8 @@ export default function Home() {
                 whileHover={{ grayscale: 0, scale: 1.1 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="flex items-center justify-center p-4 h-24 bg-gray-50 rounded-2xl hover:bg-white hover:shadow-xl transition-all duration-300"
+                onClick={() => setSelectedPartner(img)}
+                className="flex items-center justify-center p-4 h-24 bg-gray-50 rounded-2xl hover:bg-white hover:shadow-xl transition-all duration-300 cursor-pointer"
               >
                 <img 
                   src={img} 
@@ -406,6 +410,35 @@ export default function Home() {
               </motion.div>
             ))}
           </div>
+
+          <AnimatePresence>
+            {selectedPartner && (
+              <motion.div 
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                onClick={() => setSelectedPartner(null)}
+                className="fixed inset-0 z-[100] bg-brand-dark/90 backdrop-blur-md flex items-center justify-center p-4 md:p-8"
+              >
+                <motion.button 
+                  initial={{ scale: 0, rotate: -90 }}
+                  animate={{ scale: 1, rotate: 0 }}
+                  className="absolute top-8 right-8 text-white bg-brand-blue p-3 rounded-full shadow-xl hover:scale-110 transition-transform"
+                >
+                  <X size={24} />
+                </motion.button>
+                <motion.img 
+                  initial={{ scale: 0.8, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  exit={{ scale: 0.8, opacity: 0 }}
+                  src={selectedPartner}
+                  alt="Partner logo enlarged"
+                  className="max-w-full max-h-[80vh] object-contain rounded-2xl shadow-2xl bg-white p-8"
+                  onClick={(e) => e.stopPropagation()}
+                />
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
       </section>
 
