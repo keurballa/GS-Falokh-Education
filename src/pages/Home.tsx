@@ -112,12 +112,12 @@ export default function Home() {
           >
             <div className="grid grid-cols-2 gap-4">
               <img 
-                src="https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=1932&auto=format&fit=crop" 
+                src="/images/img1.jpg"
                 alt="Learning" 
                 className="w-full h-64 object-cover rounded-2xl shadow-lg mt-12"
               />
               <img 
-                src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=1920&auto=format&fit=crop" 
+                src="/images/img 2.jpg"
                 alt="Activities" 
                 className="w-full h-64 object-cover rounded-2xl shadow-lg"
               />
