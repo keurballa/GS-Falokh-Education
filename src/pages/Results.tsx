@@ -116,7 +116,7 @@ export default function Results() {
         </div>
 
         {/* --- RECOGNITION SECTION --- */}
-        <div className="bg-brand-dark text-white rounded-[3rem] p-12 md:p-20 relative overflow-hidden shadow-2xl">
+        <div className="bg-brand-dark text-white rounded-[3rem] p-12 md:p-20 relative overflow-hidden shadow-2xl mb-24">
           <div className="absolute bottom-0 right-0 w-96 h-96 bg-brand-blue/10 rounded-full -mr-48 -mb-48 blur-3xl"></div>
           
           <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -145,6 +145,30 @@ export default function Results() {
             </div>
           </div>
         </div>
+
+        {/* --- GALLERY / PARTNERS IN RESULTS --- */}
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mb-24"
+        >
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-display font-bold text-brand-dark mb-4">Mur de la Réussite & Partenariats</h2>
+            <p className="text-gray-500">Ils soutiennent notre excellence éducative</p>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-6">
+            {[20, 21, 22, 23, 24, 25, 26].map((num) => (
+              <div key={num} className="aspect-square bg-gray-50 rounded-2xl overflow-hidden group border border-gray-100 hover:shadow-lg transition-all">
+                <img 
+                  src={`/images/img${num}.jpeg`} 
+                  alt={`Distinction ${num}`} 
+                  className="w-full h-full object-contain p-4 group-hover:scale-110 transition-transform"
+                />
+              </div>
+            ))}
+          </div>
+        </motion.div>
       </section>
     </div>
   );

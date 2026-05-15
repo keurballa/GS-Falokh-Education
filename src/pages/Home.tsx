@@ -245,7 +245,7 @@ export default function Home() {
               { title: 'Bibliothèque Digitale', icon: Library, desc: 'Milliers de ressources accessibles 24h/24.' },
               { title: 'Cantine Équilibrée', icon: Coffee, desc: 'Repas sains et variés préparés sur place.' },
               { title: 'Suivi Personnalisé', icon: Users, desc: 'Rapport hebdomadaire pour chaque parent.' },
-              { title: 'Activités Clubs', icon: Trophy, desc: 'Musique, Sport, Théâtre et Club de Robotique.' },
+              { title: 'Activités Clubs', icon: Trophy, desc: 'Musique, Sport, Théâtre et Club de Robotique.', link: '/sports' },
             ].map((item, i) => (
               item.title === 'Bibliothèque Digitale' ? (
                 <Link to="/library" key={i}>
@@ -263,6 +263,25 @@ export default function Home() {
                     <p className="text-gray-400 text-sm leading-relaxed mb-4">{item.desc}</p>
                     <span className="text-brand-blue font-bold text-xs flex items-center gap-1 group-hover:gap-2 transition-all">
                       Accéder à la bibliothèque <ArrowRight size={14} />
+                    </span>
+                  </motion.div>
+                </Link>
+              ) : item.link && item.link.startsWith('/') ? (
+                <Link to={item.link} key={i}>
+                  <motion.div 
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.05 }}
+                    className="p-8 h-full rounded-3xl bg-white/5 border border-white/10 backdrop-blur-sm hover:border-brand-blue/50 transition-all group cursor-pointer"
+                  >
+                    <div className="w-14 h-14 bg-brand-blue/20 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-brand-blue transition-colors">
+                      <item.icon size={28} className="text-brand-blue group-hover:text-white" />
+                    </div>
+                    <h4 className="text-xl font-display font-bold mb-3">{item.title}</h4>
+                    <p className="text-gray-400 text-sm leading-relaxed mb-4">{item.desc}</p>
+                    <span className="text-brand-blue font-bold text-xs flex items-center gap-1 group-hover:gap-2 transition-all">
+                      Découvrir <ArrowRight size={14} />
                     </span>
                   </motion.div>
                 </Link>

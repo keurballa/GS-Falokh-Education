@@ -50,9 +50,9 @@ export default function Contact() {
           {/* Info cards */}
           <div className="space-y-6">
             {[
-              { icon: Phone, label: 'Téléphone', value: '+221 230 98 12', color: 'bg-brand-blue/10 text-brand-blue' },
-              { icon: Mail, label: 'Email', value: 'archilo05@gmail.com', color: 'bg-brand-orange/10 text-brand-orange' },
-              { icon: MessageCircle, label: 'WhatsApp', value: '+221 230 98 12', color: 'bg-green-100 text-green-600' },
+              { icon: Phone, label: 'Téléphone', value: '+221 317 46 43', color: 'bg-brand-blue/10 text-brand-blue' },
+              { icon: Mail, label: 'Email', value: 'sajoyu23@gmail.com', color: 'bg-brand-orange/10 text-brand-orange' },
+              { icon: MessageCircle, label: 'WhatsApp', value: '+221 317 46 43', color: 'bg-green-100 text-green-600' },
               { icon: MapPin, label: 'Adresse', value: 'Falokh, Mbour, Sénégal', color: 'bg-purple-100 text-purple-600' },
               { icon: Clock, label: 'Horaires', value: 'Lun - Ven : 08h - 17h', color: 'bg-gray-100 text-gray-600' },
             ].map((item, i) => (

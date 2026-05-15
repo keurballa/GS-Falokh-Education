@@ -16,6 +16,7 @@ import Presentation from './pages/Presentation';
 import Cycles from './pages/Cycles';
 import Library from './pages/Library';
 import Results from './pages/Results';
+import Sports from './pages/Sports';
 
 // --- Components ---
 
@@ -38,6 +39,7 @@ function Navbar() {
     { name: 'Cycles', path: '/cycles' },
     { name: 'Admissions', path: '/admissions' },
     { name: 'Résultats', path: '/results' },
+    { name: 'Sport & Loisir', path: '/sports' },
     { name: 'Actualités', path: '/news' },
     { name: 'Contact', path: '/contact' },
   ];
@@ -147,9 +149,11 @@ function Footer() {
         <div>
           <h4 className="font-display font-bold text-lg mb-6">Liens Rapides</h4>
           <ul className="space-y-4 text-gray-400">
-            {['À Propos', 'Cycles Scolaires', 'Admission', 'Actualités', 'Galerie'].map(item => (
-              <li key={item}><Link to="#" className="hover:text-white transition-colors flex items-center gap-2"><ChevronRight size={14} /> {item}</Link></li>
-            ))}
+            <li><Link to="/presentation" className="hover:text-white transition-colors flex items-center gap-2"><ChevronRight size={14} /> À Propos</Link></li>
+            <li><Link to="/cycles" className="hover:text-white transition-colors flex items-center gap-2"><ChevronRight size={14} /> Cycles Scolaires</Link></li>
+            <li><Link to="/sports" className="hover:text-white transition-colors flex items-center gap-2"><ChevronRight size={14} /> Sport et Loisir</Link></li>
+            <li><Link to="/results" className="hover:text-white transition-colors flex items-center gap-2"><ChevronRight size={14} /> Résultats</Link></li>
+            <li><Link to="/news" className="hover:text-white transition-colors flex items-center gap-2"><ChevronRight size={14} /> Actualités</Link></li>
           </ul>
         </div>
 
@@ -212,6 +216,7 @@ export default function App() {
               <Route path="/contact" element={<Contact />} />
               <Route path="/news" element={<News />} />
               <Route path="/results" element={<Results />} />
+              <Route path="/sports" element={<Sports />} />
               <Route path="/library" element={<Library />} />
               <Route path="*" element={<Home />} />
             </Routes>
