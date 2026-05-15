@@ -24,7 +24,7 @@ export default function Presentation() {
           >
             Découvrez notre <span className="text-brand-orange">Institution</span>
           </motion.h1>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">Plus qu'une école, une communauté engagée pour l'avenir de vos enfants.</p>
+          <p className="text-gray-400 text-lg max-w-2xl mx-auto">Une éducation de qualité pour former des citoyens responsables et préparer l'avenir avec ambition.</p>
         </div>
       </section>
 
@@ -42,15 +42,26 @@ export default function Presentation() {
            <div className="inline-flex items-center gap-2 text-brand-blue font-bold text-sm uppercase mb-6">
              <History size={18} /> Notre Histoire
            </div>
-           <h2 className="text-4xl font-display font-bold text-brand-dark mb-8 leading-tight">Depuis 2016, nous bâtissons l'Excellence.</h2>
-           <p className="text-gray-600 mb-6 leading-relaxed">
-             Groupe Scolaire Falokh Education a ouvert ses portes avec une vision claire : offrir une alternative éducative de haute qualité accessible aux familles de Mbour désirant une formation de standard international.
-           </p>
-           <p className="text-gray-600 mb-10 leading-relaxed">
-             D'un simple bâtiment avec quelques dizaines d'élèves, nous sommes devenus une institution de référence à Falokh, accueillant aujourd'hui de nombreux apprenants.
-           </p>
-           <div className="space-y-4">
-              {['Fondation par des experts en éducation', 'Croissance continue et nouveaux locaux', 'Reconnaissance académique nationale'].map(i => (
+           <h2 className="text-4xl font-display font-bold text-brand-dark mb-8 leading-tight">L'Excellence Éducative au Cœur de Mbour.</h2>
+           <div className="space-y-6 text-gray-600 leading-relaxed">
+             <p>
+               Bienvenue au Groupe Scolaire Falokh Éducation, un établissement privé situé à Mbour, au quartier Saly Douté, en face de l’arrêt Tata et de la RN1, à l’immeuble Youssou Ndong.
+             </p>
+             <p>
+               Notre école offre un cadre d’apprentissage moderne, sécurisé et favorable à l’épanouissement des enfants. Nous avons pour mission de former des élèves sérieux, responsables et ouverts sur le monde, grâce à une pédagogie innovante associée aux valeurs traditionnelles de respect, de discipline et d’excellence.
+             </p>
+             <p>
+               Au Groupe Scolaire Falokh Éducation, chaque enfant bénéficie d’un accompagnement de qualité assuré par une équipe pédagogique dynamique, compétente et attentive à la réussite de tous. Nous mettons l’accent aussi bien sur les performances scolaires que sur le développement moral, culturel et social de nos apprenants.
+             </p>
+             <p>
+               Notre établissement dispose d’un environnement calme et accueillant permettant aux élèves d’étudier dans de bonnes conditions. Nous travaillons en étroite collaboration avec les parents afin d’assurer un suivi efficace et une éducation harmonieuse des enfants.
+             </p>
+             <p className="font-bold text-brand-blue">
+               Choisir le Groupe Scolaire Falokh Éducation, c’est offrir à votre enfant une éducation de qualité et les meilleures bases pour préparer son avenir avec confiance et ambition.
+             </p>
+           </div>
+           <div className="space-y-4 mt-8">
+              {['Accompagnement de qualité par des experts', 'Cadre moderne, calme et sécurisé', 'Collaboration étroite avec les familles'].map(i => (
                 <div key={i} className="flex items-center gap-3 font-bold text-brand-dark">
                   <CheckCircle2 className="text-brand-orange" size={20} /> {i}
                 </div>
@@ -63,9 +74,9 @@ export default function Presentation() {
       <section className="py-24 bg-brand-light">
         <div className="max-w-7xl mx-auto px-4 md:px-8 grid grid-cols-1 md:grid-cols-3 gap-8">
           {[
-            { title: 'Notre Mission', desc: 'Instruire, inspirer et former des citoyens responsables et compétents capable d\'impacter positivement le monde.', icon: Target, color: 'text-brand-blue', bg: 'bg-brand-blue/10' },
-            { title: 'Notre Vision', desc: 'Devenir le pôle d\'excellence éducative de référence en Afrique de l\'Ouest par l\'innovation pédagogique.', icon: Eye, color: 'text-brand-orange', bg: 'bg-brand-orange/10' },
-            { title: 'Nos Valeurs', desc: 'Intégrité, Respect, Excellence, Solidarité et Créativité sont au cœur de notre identité quotidienne.', icon: Sparkles, color: 'text-purple-600', bg: 'bg-purple-100' },
+            { title: 'Notre Mission', desc: 'Former des élèves responsables et ouverts sur le monde grâce à un accompagnement attentif et une pédagogie innovante.', icon: Target, color: 'text-brand-blue', bg: 'bg-brand-blue/10' },
+            { title: 'Notre Vision', desc: 'Offrir à chaque enfant une éducation de qualité et les meilleures bases pour préparer son avenir avec confiance.', icon: Eye, color: 'text-brand-orange', bg: 'bg-brand-orange/10' },
+            { title: 'Nos Valeurs', desc: 'Le Respect, la Discipline et l’Excellence sont le socle de notre démarche pour l’épanouissement de nos apprenants.', icon: Sparkles, color: 'text-purple-600', bg: 'bg-purple-100' },
           ].map((item, i) => (
             <motion.div 
                key={i}
@@ -94,9 +105,9 @@ export default function Presentation() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
            {[
-             { title: 'Apprentissage Actif', icon: Zap, desc: 'L\'élève est au centre. Nous favorisons l\'expérimentation et le travail collaboratif.' },
-             { title: 'Bien-être de l\'Enfant', icon: Heart, desc: 'Un suivi psychopédagogique pour assurer l\'équilibre émotionnel de chaque apprenant.' },
-             { title: 'Sûreté Totale', icon: ShieldCheck, desc: 'Vidéosurveillance, contrôle d\'accès et personnel de sécurité qualifié 24h/24.' }
+             { title: 'Accompagnement', icon: Zap, desc: 'Une équipe pédagogique dynamique et attentive à la réussite et au développement de tous.' },
+             { title: 'Épanouissement', icon: Heart, desc: 'Un accent mis sur les performances scolaires et le développement moral, culturel et social.' },
+             { title: 'Cadre Idéal', icon: ShieldCheck, desc: 'Un environnement calme et accueillant permettant aux élèves d’étudier dans d’excellentes conditions.' }
            ].map((item, i) => (
              <div key={i} className="flex gap-6">
                 <div className="shrink-0 w-14 h-14 bg-white shadow-xl rounded-2xl flex items-center justify-center text-brand-blue border border-gray-50">

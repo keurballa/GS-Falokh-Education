@@ -60,7 +60,7 @@ export default function Home() {
               variants={fadeIn}
               className="text-lg md:text-xl text-gray-300 mb-10 leading-relaxed"
             >
-              Bienvenue au Groupe Scolaire Falokh Education, où nous combinons pédagogie moderne et valeurs traditionnelles pour offrir une éducation de classe mondiale à votre enfant à Mbour.
+              Bienvenue au Groupe Scolaire Falokh Éducation, à Mbour. Nous combinons une pédagogie moderne et des valeurs traditionnelles afin d’offrir à vos enfants une éducation de qualité, fondée sur l’excellence, la discipline et l’épanouissement.
             </motion.p>
             <motion.div 
               variants={fadeIn}
@@ -139,7 +139,7 @@ export default function Home() {
               L'excellence académique combinée à l'innovation pédagogique.
             </motion.h3>
             <motion.p variants={fadeIn} className="text-gray-600 mb-8 leading-relaxed">
-              Situé à Falokh, Mbour, notre établissement a pour mission de révolutionner l'éducation locale. Le Groupe Scolaire Falokh Education est un lieu où chaque enfant est encouragé à découvrir ses talents uniques.
+              Bienvenue au Groupe Scolaire Falokh Éducation, à Mbour. Nous combinons une pédagogie moderne et des valeurs traditionnelles afin d’offrir à vos enfants une éducation de qualité, fondée sur l’excellence, la discipline et l’épanouissement. Avec Falokh Éducation, chaque enfant apprend, grandit et prépare sereinement son avenir.
             </motion.p>
             <motion.div variants={fadeIn} className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10">
               {[
@@ -238,7 +238,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               { title: 'Informatique & Labo', icon: Laptop, desc: 'Salles info modernes et laboratoires sciences équipés.' },
-              { title: 'Partenaires', icon: Handshake, desc: 'Collaboration avec des institutions nationales et internationales.' },
+              { title: 'Partenaires', icon: Handshake, desc: 'Collaboration avec des institutions nationales et internationales.', link: '#partenaires' },
               { title: 'Bibliothèque Digitale', icon: Library, desc: 'Milliers de ressources accessibles 24h/24.' },
               { title: 'Cantine Équilibrée', icon: Coffee, desc: 'Repas sains et variés préparés sur place.' },
               { title: 'Suivi Personnalisé', icon: Users, desc: 'Rapport hebdomadaire pour chaque parent.' },
@@ -263,6 +263,25 @@ export default function Home() {
                     </span>
                   </motion.div>
                 </Link>
+              ) : item.title === 'Partenaires' ? (
+                <a href={item.link} key={i}>
+                  <motion.div 
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.05 }}
+                    className="p-8 h-full rounded-3xl bg-white/5 border border-white/10 backdrop-blur-sm hover:border-brand-blue/50 transition-all group cursor-pointer"
+                  >
+                    <div className="w-14 h-14 bg-brand-blue/20 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-brand-blue transition-colors">
+                      <item.icon size={28} className="text-brand-blue group-hover:text-white" />
+                    </div>
+                    <h4 className="text-xl font-display font-bold mb-3">{item.title}</h4>
+                    <p className="text-gray-400 text-sm leading-relaxed mb-4">{item.desc}</p>
+                    <span className="text-brand-blue font-bold text-xs flex items-center gap-1 group-hover:gap-2 transition-all">
+                      Voir nos partenaires <ArrowRight size={14} />
+                    </span>
+                  </motion.div>
+                </a>
               ) : (
                 <motion.div 
                   key={i}
@@ -300,22 +319,22 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                title: "Lancement du nouveau Club de Robotique",
-                desc: "Nous sommes fiers d'annoncer l'ouverture de notre club de robotique et d'IA dès la rentrée prochaine.",
-                img: "/images/img1.jpg",
-                date: "10 Mai 2026",
-                category: "Innovation"
-              },
-              {
-                title: "Sortie pédagogique au Parc de Hann",
-                desc: "Les classes d'élémentaire ont profité d'une journée riche en découvertes sur la biodiversité.",
-                img: "/images/img 2.jpg",
-                date: "05 Mai 2026",
+                title: "Préparation des compositions et Journée de l'Excellence",
+                desc: "Organisation des compositions du 2nd semestre et de la grande Journée de l'Excellence le 13 Juin.",
+                img: "https://images.unsplash.com/photo-1543269865-cbf427effbad?q=80&w=800",
+                date: "14 Mai 2026",
                 category: "Événement"
               },
               {
-                title: "Célébration de la réussite : 100% au BAC 2025",
-                desc: "Pour la troisième année consécutive, GS Falokh Education affiche un taux de réussite exceptionnel.",
+                title: "Examen Blanc et Coaching BFEM",
+                desc: "Retour sur l'examen blanc de Mai et programme intensif de révisions pour nos candidats au BFEM.",
+                img: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=800",
+                date: "14 Mai 2026",
+                category: "Pédagogie"
+              },
+              {
+                title: "Excellence aux Examens Nationaux 2024/2025",
+                desc: "98% de réussite au BFEM et à l'entrée en 6e, 93% au CFEE. Une fierté pour notre institution.",
                 img: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=800",
                 date: "12 Mai 2026",
                 category: "Résultats"
@@ -346,6 +365,44 @@ export default function Home() {
                     Lire l'article <ArrowRight size={16} />
                   </Link>
                 </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* --- PARTNERS SECTION --- */}
+      <section id="partenaires" className="py-24 bg-white border-y border-gray-100">
+        <div className="max-w-7xl mx-auto px-4 md:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-brand-blue font-bold text-sm uppercase tracking-widest mb-4">Ils nous font confiance</h2>
+            <h3 className="text-4xl font-display font-bold text-brand-dark">Nos Partenaires</h3>
+          </div>
+          
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-8 items-center">
+            {[
+              '/images/img20.jpeg',
+              '/images/img21.jpeg',
+              '/images/img22.jpeg',
+              '/images/img23.jpeg',
+              '/images/img24.jpeg',
+              '/images/img25.jpeg',
+              '/images/img26.jpeg'
+            ].map((img, i) => (
+              <motion.div 
+                key={i}
+                initial={{ opacity: 0, grayscale: 1 }}
+                whileInView={{ opacity: 1 }}
+                whileHover={{ grayscale: 0, scale: 1.1 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="flex items-center justify-center p-4 h-24 bg-gray-50 rounded-2xl hover:bg-white hover:shadow-xl transition-all duration-300"
+              >
+                <img 
+                  src={img} 
+                  alt={`Partenaire ${i + 1}`} 
+                  className="max-w-full max-h-full object-contain filter grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all"
+                />
               </motion.div>
             ))}
           </div>

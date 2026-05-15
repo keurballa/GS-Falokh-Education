@@ -15,6 +15,7 @@ import News from './pages/News';
 import Presentation from './pages/Presentation';
 import Cycles from './pages/Cycles';
 import Library from './pages/Library';
+import Results from './pages/Results';
 
 // --- Components ---
 
@@ -210,6 +211,7 @@ export default function App() {
               <Route path="/portal" element={<ParentPortal />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/news" element={<News />} />
+              <Route path="/results" element={<Results />} />
               <Route path="/library" element={<Library />} />
               <Route path="*" element={<Home />} />
             </Routes>

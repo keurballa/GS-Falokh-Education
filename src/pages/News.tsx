@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom';
 const mockNews = [
   {
     id: '1',
-    title: "Célébration de la réussite : 100% au BAC 2025",
-    desc: "Pour la troisième année consécutive, GS Falokh Education affiche un taux de réussite exceptionnel aux examens nationaux.",
+    title: "Performance Exceptionnelle aux Examens Nationaux 2024/2025",
+    desc: "Notre institution affiche des taux de réussite remarquables : 98% au BFEM, 98% à l'entrée en 6e et 93% au CFEE. Ces résultats témoignent de l'engagement de nos élèves et de l'encadrement.",
     img: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=800",
     date: "12 Mai 2026",
     author: "Admin",
@@ -34,10 +34,28 @@ const mockNews = [
     id: '4',
     title: "Inauguration de la Bibliothèque Digitale",
     desc: "Un nouvel espace de lecture moderne avec plus de 10 000 ouvrages numériques accessibles à tous nos élèves.",
-    img: "https://images.unsplash.com/photo-1511629091441-ee46146481b6?q=80&w=800",
+    img: "https://13commeune.fr/app/uploads/2020/11/Bibliotheque-numerique.jpg",
     date: "01 Mai 2026",
     author: "Admin",
     category: "Infrastructures"
+  },
+  {
+    id: '5',
+    title: "Préparation des compositions du 2nd semestre et Journée de l'Excellence",
+    desc: "Nous préparons activement les compositions du second semestre ainsi que notre grande Journée de l'Excellence prévue pour le 13 Juin. Un moment fort pour récompenser le mérite.",
+    img: "https://static.vecteezy.com/ti/vecteur-libre/p1/4187970-ensemble-de-fournitures-scolaires-composition-rentree-scolaire-lettrage-enfants-sujets-pour-etude-illustrationle-dans-un-style-plat-sur-fond-blanc-tout-les-objets-sont-isoles-vectoriel.jpg",
+    date: "14 Mai 2026",
+    author: "Admin",
+    category: "Événement"
+  },
+  {
+    id: '6',
+    title: "Examen Blanc et Préparation intensive au BFEM",
+    desc: "Suite aux examens blancs des 11, 12 et 13 Mai, nos élèves de 3ème entament une phase de révisions intensives et d'accompagnement personnalisé pour le BFEM.",
+    img: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=800",
+    date: "14 Mai 2026",
+    author: "Directeur des Études",
+    category: "Pédagogie"
   }
 ];
 

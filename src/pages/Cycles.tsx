@@ -17,7 +17,7 @@ export default function Cycles() {
     },
     {
       title: 'Élémentaire',
-      subtitle: 'Du CP au CM2',
+      subtitle: 'Du CI au CM2',
       icon: BookOpen,
       color: 'bg-brand-blue/10 text-brand-blue',
       img: '/images/img 9.jpeg',
