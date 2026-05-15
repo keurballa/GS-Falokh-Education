@@ -409,7 +409,8 @@ export default function Home() {
               '/images/img23.jpeg',
               '/images/img24.jpeg',
               '/images/img25.jpeg',
-              '/images/img26.jpeg'
+              '/images/img26.jpeg',
+              '/images/img27.jpeg'
             ].map((img, i) => (
               <motion.div 
                 key={i}

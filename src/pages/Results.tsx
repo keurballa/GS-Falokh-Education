@@ -1,5 +1,6 @@
-import { motion } from 'motion/react';
-import { Trophy, Award, CheckCircle2, Star, TrendingUp } from 'lucide-react';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
+import { Trophy, Award, CheckCircle2, Star, TrendingUp, X } from 'lucide-react';
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -7,6 +8,7 @@ const fadeIn = {
 };
 
 export default function Results() {
+  const [selectedImg, setSelectedImg] = useState<string | null>(null);
   const stats = [
     { label: 'Réussite au CFEE', value: '93%', color: 'text-brand-blue', bg: 'bg-brand-blue/10' },
     { label: 'Entrée en 6e', value: '98%', color: 'text-brand-orange', bg: 'bg-brand-orange/10' },
@@ -157,9 +159,13 @@ export default function Results() {
             <h2 className="text-3xl font-display font-bold text-brand-dark mb-4">Mur de la Réussite & Partenariats</h2>
             <p className="text-gray-500">Ils soutiennent notre excellence éducative</p>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-6">
-            {[20, 21, 22, 23, 24, 25, 26].map((num) => (
-              <div key={num} className="aspect-square bg-gray-50 rounded-2xl overflow-hidden group border border-gray-100 hover:shadow-lg transition-all">
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-6">
+            {[20, 21, 22, 23, 24, 25, 26, 27].map((num) => (
+              <div 
+                key={num} 
+                className="aspect-square bg-gray-50 rounded-2xl overflow-hidden group border border-gray-100 hover:shadow-lg transition-all cursor-pointer"
+                onClick={() => setSelectedImg(`/images/img${num}.jpeg`)}
+              >
                 <img 
                   src={`/images/img${num}.jpeg`} 
                   alt={`Distinction ${num}`} 
@@ -168,6 +174,35 @@ export default function Results() {
               </div>
             ))}
           </div>
+
+          <AnimatePresence>
+            {selectedImg && (
+              <motion.div 
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                onClick={() => setSelectedImg(null)}
+                className="fixed inset-0 z-[100] bg-brand-dark/90 backdrop-blur-md flex items-center justify-center p-4 md:p-8"
+              >
+                <motion.button 
+                  initial={{ scale: 0, rotate: -90 }}
+                  animate={{ scale: 1, rotate: 0 }}
+                  className="absolute top-8 right-8 text-white bg-brand-blue p-3 rounded-full shadow-xl hover:scale-110 transition-transform"
+                >
+                  <X size={24} />
+                </motion.button>
+                <motion.img 
+                  initial={{ scale: 0.8, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  exit={{ scale: 0.8, opacity: 0 }}
+                  src={selectedImg}
+                  alt="Enlarged result"
+                  className="max-w-full max-h-[80vh] object-contain rounded-2xl shadow-2xl bg-white p-8"
+                  onClick={(e) => e.stopPropagation()}
+                />
+              </motion.div>
+            )}
+          </AnimatePresence>
         </motion.div>
       </section>
     </div>
