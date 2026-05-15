@@ -53,7 +53,7 @@ export default function Contact() {
               { icon: Phone, label: 'Téléphone', value: '+221 317 46 43', color: 'bg-brand-blue/10 text-brand-blue' },
               { icon: Mail, label: 'Email', value: 'sajoyu23@gmail.com', color: 'bg-brand-orange/10 text-brand-orange' },
               { icon: MessageCircle, label: 'WhatsApp', value: '+221 317 46 43', color: 'bg-green-100 text-green-600' },
-              { icon: MapPin, label: 'Adresse', value: 'Falokh, Mbour, Sénégal', color: 'bg-purple-100 text-purple-600' },
+              { icon: MapPin, label: 'Adresse', value: 'Falokh, Mbour, Sénégal (14.4256, -16.9336)', color: 'bg-purple-100 text-purple-600' },
               { icon: Clock, label: 'Horaires', value: 'Lun - Ven : 08h - 17h', color: 'bg-gray-100 text-gray-600' },
             ].map((item, i) => (
               <div key={i} className="flex items-center gap-4 bg-white p-6 rounded-3xl shadow-sm border border-gray-50">
@@ -63,6 +63,16 @@ export default function Contact() {
                 <div>
                   <p className="text-xs font-bold text-gray-400 uppercase">{item.label}</p>
                   <p className="font-bold text-brand-dark">{item.value}</p>
+                  {item.label === 'Adresse' && (
+                    <a 
+                      href="https://www.google.com/maps/search/?api=1&query=14.425612856545788,-16.933624070011476" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-brand-blue text-xs font-bold hover:underline block mt-1"
+                    >
+                      Voir sur Google Maps
+                    </a>
+                  )}
                 </div>
               </div>
             ))}
@@ -135,21 +145,27 @@ export default function Contact() {
         </div>
 
         {/* Map Mockup */}
-        <div className="mt-20 h-96 rounded-[3rem] overflow-hidden relative shadow-2xl">
+        <a 
+          href="https://www.google.com/maps/search/?api=1&query=14.425612856545788,-16.933624070011476" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="mt-20 h-96 rounded-[3rem] overflow-hidden relative shadow-2xl block group"
+        >
           <img 
             src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?q=80&w=2066&auto=format&fit=crop" 
             alt="Map background" 
-            className="w-full h-full object-cover grayscale"
+            className="w-full h-full object-cover grayscale group-hover:scale-105 transition-transform duration-700"
           />
-          <div className="absolute inset-0 bg-brand-blue/20"></div>
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white p-6 rounded-3xl shadow-2xl flex flex-col items-center">
+          <div className="absolute inset-0 bg-brand-blue/20 group-hover:bg-brand-blue/10 transition-colors"></div>
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white p-6 rounded-3xl shadow-2xl flex flex-col items-center group-hover:scale-110 transition-transform">
             <div className="w-12 h-12 bg-brand-orange text-white rounded-full flex items-center justify-center mb-3 shadow-lg animate-bounce">
               <MapIcon size={24} />
             </div>
             <h4 className="font-bold text-brand-dark text-center">GS Falokh Education</h4>
             <p className="text-xs text-gray-400">Falokh, Mbour</p>
+            <span className="text-brand-blue text-[10px] font-bold mt-2 uppercase">Cliquer pour agrandir la carte</span>
           </div>
-        </div>
+        </a>
       </section>
     </div>
   );

@@ -160,9 +160,9 @@ function Footer() {
         <div>
           <h4 className="font-display font-bold text-lg mb-6">Contact</h4>
           <ul className="space-y-4 text-gray-400">
-            <li className="flex items-start gap-3"><MapPin size={20} className="text-brand-orange shrink-0" /> Falokh, Mbour, Sénégal</li>
-            <li className="flex items-center gap-3"><Phone size={20} className="text-brand-orange shrink-0" /> +221 230 98 12</li>
-            <li className="flex items-center gap-3"><Mail size={20} className="text-brand-orange shrink-0" /> archilo05@gmail.com</li>
+            <li className="flex items-start gap-3"><MapPin size={20} className="text-brand-orange shrink-0" /> Falokh, Mbour, Sénégal (14.4256, -16.9336)</li>
+            <li className="flex items-center gap-3"><Phone size={20} className="text-brand-orange shrink-0" /> +221 317 46 43</li>
+            <li className="flex items-center gap-3"><Mail size={20} className="text-brand-orange shrink-0" /> sajoyu23@gmail.com</li>
           </ul>
         </div>
 
