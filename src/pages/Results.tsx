@@ -159,16 +159,31 @@ export default function Results() {
             <h2 className="text-3xl font-display font-bold text-brand-dark mb-4">Mur de la Réussite & Partenariats</h2>
             <p className="text-gray-500">Ils soutiennent notre excellence éducative</p>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-6">
-            {[20, 21, 22, 23, 24, 25, 26, 27].map((num) => (
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-7 gap-6">
+            {[
+              '/images/img30.jpeg',
+              '/images/img31.jpeg',
+              '/images/img32.jpeg',
+              '/images/img1.jpg',
+              '/images/img 2.jpg',
+              '/images/img 3.jpg',
+              '/images/img20.jpeg',
+              '/images/img21.jpeg',
+              '/images/img22.jpeg',
+              '/images/img23.jpeg',
+              '/images/img24.jpeg',
+              '/images/img25.jpeg',
+              '/images/img26.jpeg',
+              '/images/img27.jpeg'
+            ].map((imgUrl, i) => (
               <div 
-                key={num} 
+                key={i} 
                 className="aspect-square bg-gray-50 rounded-2xl overflow-hidden group border border-gray-100 hover:shadow-lg transition-all cursor-pointer"
-                onClick={() => setSelectedImg(`/images/img${num}.jpeg`)}
+                onClick={() => setSelectedImg(imgUrl)}
               >
                 <img 
-                  src={`/images/img${num}.jpeg`} 
-                  alt={`Distinction ${num}`} 
+                  src={imgUrl} 
+                  alt={`Distinction ${i + 1}`} 
                   className="w-full h-full object-contain p-4 group-hover:scale-110 transition-transform"
                 />
               </div>

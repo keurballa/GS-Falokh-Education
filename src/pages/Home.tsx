@@ -401,8 +401,14 @@ export default function Home() {
             <h3 className="text-4xl font-display font-bold text-brand-dark">Nos Partenaires</h3>
           </div>
           
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-8 items-center">
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-7 gap-8 items-center">
             {[
+              '/images/img30.jpeg',
+              '/images/img31.jpeg',
+              '/images/img32.jpeg',
+              '/images/img1.jpg',
+              '/images/img 2.jpg',
+              '/images/img 3.jpg',
               '/images/img20.jpeg',
               '/images/img21.jpeg',
               '/images/img22.jpeg',
