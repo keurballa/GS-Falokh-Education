@@ -157,10 +157,26 @@ export default function Results() {
         >
           <div className="text-center mb-12">
             <h2 className="text-3xl font-display font-bold text-brand-dark mb-4">Mur de la Réussite & Partenariats</h2>
-            <p className="text-gray-500">Ils soutiennent notre excellence éducative</p>
+            <p className="text-gray-500 mb-8">Ils soutiennent notre excellence éducative</p>
+            <div className="text-left text-gray-600 max-w-4xl mx-auto space-y-4 leading-relaxed bg-brand-light p-8 rounded-3xl mb-12">
+              <p>Le GSFEM a développé des partenariats aussi bien au niveau local qu'international afin de renforcer l'encadrement pédagogique, sportif et social de ses élèves.</p>
+              <p>Au niveau local, notre établissement entretient une étroite collaboration avec le centre de formation Sheikh Khalifa Bin Zayed, situé dans le quartier de Falokh. Dans le cadre de ce partenariat, certains enseignants y délocalisent leurs cours afin de permettre aux apprenants de bénéficier d'un cadre plus adapté et de nouvelles opportunités d'apprentissage.</p>
+              <p>Par ailleurs, les activités de l'Association Sportive (AS) du GSFEM se déroulent également sur les terrains du centre. En effet, les mercredis après-midi, traditionnellement consacrés aux activités sportives dans les collèges et lycées du Sénégal, une entente a été conclue avec les autorités du centre afin de mettre leurs espaces de jeu à la disposition de nos élèves. Les jeunes filles y pratiquent le handball tandis que les garçons évoluent au football.</p>
+              <p>Ce partenariat poursuit également un objectif d'orientation et d'insertion. Il permet de familiariser nos élèves, dont la majorité réside dans le quartier, avec le centre et les différentes offres de formation qu'il propose, en vue d'une éventuelle intégration après l'obtention du baccalauréat.</p>
+              <p>Sur le plan international, le GSFEM a aussi noué un partenariat avec des humanitaires français regroupés autour de l'association Yakaar. En collaboration avec leur représentant basé à Mbour, ces partenaires accompagnent des enfants déscolarisés issus de familles démunies vivant dans le quartier, en prenant en charge leur scolarité ainsi que leur suivi éducatif.</p>
+              <p>La visite de ces partenaires au mois de mars dernier a également permis d'échanger sur de nombreuses perspectives de coopération et de développement au profit de l'établissement et des élèves.</p>
+            </div>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-7 gap-6">
             {[
+              '/images/img40.jpeg',
+              '/images/img41.jpeg',
+              '/images/img42.jpeg',
+              '/images/img43.jpeg',
+              '/images/img44.jpeg',
+              '/images/img45.jpeg',
+              '/images/img46.jpeg',
+              '/images/img47.jpeg',
               '/images/img30.jpeg',
               '/images/img31.jpeg',
               '/images/img32.jpeg',
