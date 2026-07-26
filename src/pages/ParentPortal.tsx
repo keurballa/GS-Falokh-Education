@@ -228,7 +228,7 @@ export default function ParentPortal() {
                   </div>
                   <div>
                     <p className="text-[10px] font-bold text-gray-400">ADMINISTRATION</p>
-                    <p className="text-xs font-bold text-brand-dark">+221 230 98 12</p>
+                    <p className="text-xs font-bold text-brand-dark">+221 77 317 46 43</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3 p-3 rounded-2xl bg-gray-50 border border-transparent">
@@ -237,7 +237,7 @@ export default function ParentPortal() {
                   </div>
                   <div>
                     <p className="text-[10px] font-bold text-gray-400">WHATSAPP URGENCE</p>
-                    <p className="text-xs font-bold text-brand-dark">+221 230 98 12</p>
+                    <p className="text-xs font-bold text-brand-dark">+221 77 317 46 43</p>
                   </div>
                 </div>
               </div>

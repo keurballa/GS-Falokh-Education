@@ -50,9 +50,9 @@ export default function Contact() {
           {/* Info cards */}
           <div className="space-y-6">
             {[
-              { icon: Phone, label: 'Téléphone', value: '+221 317 46 43', color: 'bg-brand-blue/10 text-brand-blue' },
+              { icon: Phone, label: 'Téléphone', value: '+221 77 317 46 43', color: 'bg-brand-blue/10 text-brand-blue' },
               { icon: Mail, label: 'Email', value: 'sajoyu23@gmail.com', color: 'bg-brand-orange/10 text-brand-orange' },
-              { icon: MessageCircle, label: 'WhatsApp', value: '+221 317 46 43', color: 'bg-green-100 text-green-600' },
+              { icon: MessageCircle, label: 'WhatsApp', value: '+221 77 317 46 43', color: 'bg-green-100 text-green-600' },
               { icon: MapPin, label: 'Adresse', value: 'Falokh, Mbour, Sénégal (14.4256, -16.9336)', color: 'bg-purple-100 text-purple-600' },
               { icon: Clock, label: 'Horaires', value: 'Lun - Ven : 08h - 17h', color: 'bg-gray-100 text-gray-600' },
             ].map((item, i) => (
@@ -134,7 +134,7 @@ export default function Contact() {
                   <button 
                     type="submit" 
                     disabled={loading}
-                    className="w-full bg-brand-blue text-white py-4 rounded-xl font-bold text-lg hover:bg-opacity-90 transition-all flex items-center justify-center gap-2 disabled:opacity-50"
+                    className="w-full bg-brand-blue text-white py-4 rounded-xl font-bold text-lg hover:bg-opacity-90 active:scale-[0.98] transition-all flex items-center justify-center gap-2 disabled:opacity-50 disabled:active:scale-100"
                   >
                     {loading ? "Envoi..." : "Envoyer le message"} <Send size={20} />
                   </button>
