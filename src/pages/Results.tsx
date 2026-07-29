@@ -10,9 +10,9 @@ const fadeIn = {
 export default function Results() {
   const [selectedImg, setSelectedImg] = useState<string | null>(null);
   const stats = [
-    { label: 'Réussite au CFEE', value: '93%', color: 'text-brand-blue', bg: 'bg-brand-blue/10' },
-    { label: 'Entrée en 6e', value: '98%', color: 'text-brand-orange', bg: 'bg-brand-orange/10' },
-    { label: 'Réussite au BFEM', value: '98%', color: 'text-purple-600', bg: 'bg-purple-100' },
+    { label: 'Passage CE2/CM1', value: '100%', color: 'text-brand-blue', bg: 'bg-brand-blue/10' },
+    { label: 'Passage 6e/Seconde', value: '100%', color: 'text-brand-orange', bg: 'bg-brand-orange/10' },
+    { label: 'Réussite au BFEM', value: '74%', color: 'text-purple-600', bg: 'bg-purple-100' },
   ];
 
   return (
@@ -48,10 +48,17 @@ export default function Results() {
             </h2>
             <div className="space-y-6 text-gray-600 leading-relaxed text-lg">
               <p>
-                Au Groupe Scolaire Falokh Éducation, l’excellence est une véritable culture. Nous encourageons chaque élève à donner le meilleur de lui-même dans le travail, la discipline et le comportement. Chaque année, les meilleurs élèves sont récompensés afin de valoriser l’effort, le mérite et la persévérance.
+                <strong>Bilan de l'année scolaire 2025-2026.</strong><br />
+                L'année scolaire 2025-2026 s'est déroulée dans de très bonnes conditions au sein du Groupe Scolaire Falokh Education de Mbour (GSFEM). Grâce à l'engagement constant de l'administration, du personnel enseignant, des élèves et des parents d'élèves, des résultats globalement satisfaisants ont été enregistrés à tous les niveaux d'enseignement.
               </p>
               <p>
-                Notre établissement se distingue également par ses excellents résultats aux examens nationaux, témoignant de la qualité de l’enseignement et du sérieux de l’encadrement pédagogique. Pour l'année scolaire 2024/2025 :
+                À l'élémentaire, les performances des élèves témoignent d'un travail pédagogique soutenu. Les taux de passage en classe supérieure se présentent comme suit : 90,62 % au CI, 72,22 % au CP, 81,81 % au CE1, tandis que les classes de CE2 et de CM1 ont enregistré un excellent taux de passage de 100 %. Ces résultats traduisent les efforts déployés par les enseignants pour accompagner efficacement les apprenants dans leurs acquisitions scolaires.
+              </p>
+              <p>
+                Au cycle moyen, les résultats sont également encourageants. Les classes de 6e et de Seconde ont obtenu un taux de passage de 100 %. La classe de 5e a enregistré un taux de 94 %. En 3e, le taux de passage s'élève à 52 %.
+              </p>
+              <p>
+                Concernant les examens nationaux, le Groupe Scolaire Falokh Education de Mbour a obtenu un taux de réussite de 74 % au Brevet de Fin d'Études Moyennes (BFEM). Ce résultat est honorable et reflète les efforts conjugués des élèves, des enseignants et de l'ensemble de la communauté éducative. Il constitue une source de satisfaction.
               </p>
             </div>
             
@@ -63,9 +70,8 @@ export default function Results() {
                 </div>
               ))}
             </div>
-
             <p className="text-gray-600 leading-relaxed italic border-l-4 border-brand-orange pl-6 py-2 mt-8">
-              Ces performances reflètent l’engagement constant de notre équipe pédagogique ainsi que la confiance des parents qui nous accompagnent dans la réussite et l’avenir de leurs enfants.
+              Dans l'ensemble, le bilan de l'année scolaire 2025-2026 est positif. Les résultats obtenus confirment les progrès réalisés par les élèves et l'efficacité des actions pédagogiques mises en œuvre. Le GSFEM entend consolider ces acquis et relever les défis identifiés afin d'améliorer davantage les performances scolaires et de maintenir un enseignement de qualité au service de la réussite de tous les apprenants.
             </p>
           </motion.div>
 
@@ -85,8 +91,8 @@ export default function Results() {
                     <Trophy size={32} />
                   </div>
                   <div>
-                    <h4 className="text-xl font-bold text-brand-dark">CFEE 2025</h4>
-                    <p className="text-brand-blue font-bold">93% de réussite</p>
+                    <h4 className="text-xl font-bold text-brand-dark">Passage CE2/CM1</h4>
+                    <p className="text-brand-blue font-bold">100% de réussite</p>
                   </div>
                 </div>
 
@@ -95,8 +101,8 @@ export default function Results() {
                     <TrendingUp size={32} />
                   </div>
                   <div>
-                    <h4 className="text-xl font-bold text-brand-dark">Entrée en 6e</h4>
-                    <p className="text-brand-orange font-bold">98% de réussite</p>
+                    <h4 className="text-xl font-bold text-brand-dark">Passage 6e/Seconde</h4>
+                    <p className="text-brand-orange font-bold">100% de réussite</p>
                   </div>
                 </div>
 
@@ -105,8 +111,8 @@ export default function Results() {
                     <Award size={32} />
                   </div>
                   <div>
-                    <h4 className="text-xl font-bold text-brand-dark">BFEM 2025</h4>
-                    <p className="text-purple-600 font-bold">98% de réussite</p>
+                    <h4 className="text-xl font-bold text-brand-dark">BFEM</h4>
+                    <p className="text-purple-600 font-bold">74% de réussite</p>
                   </div>
                 </div>
               </div>

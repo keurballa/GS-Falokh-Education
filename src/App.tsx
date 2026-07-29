@@ -1,23 +1,22 @@
 import { Routes, Route, Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
-import { useState, useEffect, Suspense, lazy } from 'react';
+import { useState, useEffect } from 'react';
 import { 
   Menu, X, Phone, Mail, MapPin, 
   ChevronRight, Facebook, Instagram, Twitter, 
   GraduationCap, BookOpen, Users, Trophy, 
   MessageSquare, LayoutDashboard, Send
 } from 'lucide-react';
-
-const Home = lazy(() => import('./pages/Home'));
-const Admissions = lazy(() => import('./pages/Admissions'));
-const ParentPortal = lazy(() => import('./pages/ParentPortal'));
-const Contact = lazy(() => import('./pages/Contact'));
-const News = lazy(() => import('./pages/News'));
-const Presentation = lazy(() => import('./pages/Presentation'));
-const Cycles = lazy(() => import('./pages/Cycles'));
-const Library = lazy(() => import('./pages/Library'));
-const Results = lazy(() => import('./pages/Results'));
-const Sports = lazy(() => import('./pages/Sports'));
+import Home from './pages/Home';
+import Admissions from './pages/Admissions';
+import ParentPortal from './pages/ParentPortal';
+import Contact from './pages/Contact';
+import News from './pages/News';
+import Presentation from './pages/Presentation';
+import Cycles from './pages/Cycles';
+import Library from './pages/Library';
+import Results from './pages/Results';
+import Sports from './pages/Sports';
 
 // --- Components ---
 
@@ -35,7 +34,7 @@ function Navbar() {
   }, []);
 
   const navLinks = [
-    { name: 'Accueil', path: '/' },
+    { name: 'Acceuil', path: '/' },
     { name: 'Présentation', path: '/presentation' },
     { name: 'Cycles', path: '/cycles' },
     { name: 'Admissions', path: '/admissions' },
@@ -46,7 +45,7 @@ function Navbar() {
   ];
 
   return (
-    <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white/90 backdrop-blur-md shadow-md py-3' : 'bg-transparent py-5'}`}>
+    <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white shadow-md py-3' : 'bg-transparent py-5'}`}>
       <div className="max-w-7xl mx-auto px-4 md:px-8 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2">
           <div className="w-10 h-10 bg-brand-blue rounded-lg flex items-center justify-center text-white font-bold text-xl">E</div>
@@ -162,7 +161,7 @@ function Footer() {
           <h4 className="font-display font-bold text-lg mb-6">Contact</h4>
           <ul className="space-y-4 text-gray-400">
             <li className="flex items-start gap-3"><MapPin size={20} className="text-brand-orange shrink-0" /> Falokh, Mbour, Sénégal (14.4256, -16.9336)</li>
-            <li className="flex items-center gap-3"><Phone size={20} className="text-brand-orange shrink-0" /> +221 77 317 46 43</li>
+            <li className="flex items-center gap-3"><Phone size={20} className="text-brand-orange shrink-0" /> +221 317 46 43</li>
             <li className="flex items-center gap-3"><Mail size={20} className="text-brand-orange shrink-0" /> sajoyu23@gmail.com</li>
           </ul>
         </div>
@@ -183,7 +182,7 @@ function Footer() {
         </div>
       </div>
       <div className="max-w-7xl mx-auto px-4 md:px-8 border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
-        <p>© {new Date().getFullYear()} Groupe Scolaire Falokh Education. Tous droits réservés.</p>
+        <p>© 2026 Groupe Scolaire Falokh Education. Tous droits réservés.</p>
         <div className="flex gap-8">
           <a href="#" className="hover:text-white transition-colors">Politique de confidentialité</a>
           <a href="#" className="hover:text-white transition-colors">Mentions légales</a>
@@ -208,21 +207,19 @@ export default function App() {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
           >
-            <Suspense fallback={<div className="h-[60vh] flex items-center justify-center text-brand-blue"><div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-brand-blue"></div></div>}>
-              <Routes location={location}>
-                <Route path="/" element={<Home />} />
-                <Route path="/admissions" element={<Admissions />} />
-                <Route path="/presentation" element={<Presentation />} />
-                <Route path="/cycles" element={<Cycles />} />
-                <Route path="/portal" element={<ParentPortal />} />
-                <Route path="/contact" element={<Contact />} />
-                <Route path="/news" element={<News />} />
-                <Route path="/results" element={<Results />} />
-                <Route path="/sports" element={<Sports />} />
-                <Route path="/library" element={<Library />} />
-                <Route path="*" element={<Home />} />
-              </Routes>
-            </Suspense>
+            <Routes location={location}>
+              <Route path="/" element={<Home />} />
+              <Route path="/admissions" element={<Admissions />} />
+              <Route path="/presentation" element={<Presentation />} />
+              <Route path="/cycles" element={<Cycles />} />
+              <Route path="/portal" element={<ParentPortal />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/news" element={<News />} />
+              <Route path="/results" element={<Results />} />
+              <Route path="/sports" element={<Sports />} />
+              <Route path="/library" element={<Library />} />
+              <Route path="*" element={<Home />} />
+            </Routes>
           </motion.div>
         </AnimatePresence>
       </main>

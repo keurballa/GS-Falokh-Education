@@ -199,7 +199,7 @@ export default function Admissions() {
                 <button 
                   type="submit" 
                   disabled={loading}
-                  className="w-full bg-brand-blue text-white py-4 rounded-xl font-bold text-lg hover:bg-opacity-90 active:scale-[0.98] transition-all flex items-center justify-center gap-2 disabled:opacity-50 disabled:active:scale-100"
+                  className="w-full bg-brand-blue text-white py-4 rounded-xl font-bold text-lg hover:bg-opacity-90 transition-all flex items-center justify-center gap-2 disabled:opacity-50"
                 >
                   {loading ? "Envoi en cours..." : "Soumettre la candidature"} <Send size={20} />
                 </button>
@@ -233,8 +233,8 @@ export default function Admissions() {
               <h3 className="text-xl font-display font-bold mb-4">Besoin d'aide ?</h3>
               <p className="text-sm opacity-90 mb-6">Contactez notre bureau des admissions pour toute question.</p>
               <ul className="space-y-3">
-                <li className="flex items-center gap-2 font-bold"><Phone size={18} /> +221 77 317 46 43</li>
-                <li className="flex items-center gap-2 font-bold"><Mail size={18} /> sajoyu23@gmail.com</li>
+                <li className="flex items-center gap-2 font-bold"><Phone size={18} /> +221 230 98 12</li>
+                <li className="flex items-center gap-2 font-bold"><Mail size={18} /> archilo05@gmail.com</li>
               </ul>
             </div>
           </div>
